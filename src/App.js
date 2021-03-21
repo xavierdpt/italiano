@@ -1185,7 +1185,327 @@ const examples = [
         fr: "? fiore"
       },
     ]
-  }
+  },
+  {
+    location: "24",
+    section: "Formation du pluriel des noms réguliers",
+    content: [
+      {
+        it: "la pera, le pere",
+        fr: "le poivre, les poivres"
+      },
+      {
+        it: "il sogno, i soni",
+        fr: "le rêve, les rêves"
+      },
+      {
+        it: "il problema, i problemi",
+        fr: "le problème, les problèmes"
+      },
+      {
+        it: "la chiave, le chiavi",
+        fr: "la clé, les clés"
+      },
+      {
+        it: "l'insegnante, gli insegnanti",
+        fr: "l'enseignant, les enseignants"
+      },
+      {
+        it: "l'insegnante, le insegnanti",
+        fr: "l'enseignante, les enseignantes"
+      },
+      {
+        it: "l'ala, le ali",
+        fr: "l'aile, les ailes"
+      },
+      {
+        it: "l'arma, le armi",
+        fr: "l'arme, les armes"
+      },
+      {
+        it: "la mano, le mani",
+        fr: "la main, les mains"
+      },
+      {
+        it: "l'eco, gli echi",
+        fr: "l'écho, les échos"
+      }
+    ]
+  },
+  {
+    location: "25",
+    section: "Noms masculins, cas particuliers",
+    content: [
+      {
+        it: "il duca, i duchi",
+        fr: "le duc, les ducs"
+      },
+      {
+        it: "il monarca, i monarchi",
+        fr: "le monarque, les monarques"
+      },
+      {
+        it: "il collega, i colleghi",
+        fr: "le collègue, les collègues"
+      },
+      {
+        it: "il belga, i belgi",
+        fr: "le belge, les belges"
+      },
+      {
+        it: "il cuoco, i cuochi",
+        fr: "le cuisinier, les cuisiniers"
+      },
+      {
+        it: "il parco, i parchi",
+        fr: "le parc, les parcs"
+      },
+      {
+        it: "l'albergo, gli alberghi",
+        fr: "l'hôtel, les hôtels"
+      },
+      {
+        it: "il sobborgo, i sobborghi",
+        fr: "le faubourg, les faubourgs"
+      },
+      {
+        it: "l'amico, gli amici",
+        fr: "l'ami, les amis"
+      },
+      {
+        it: "il nemico, i nemici",
+        fr: "l'ennemi, les ennemis"
+      },
+      {
+        it: "il greco, i greci",
+        fr: "le grec, les grecs"
+      },
+      {
+        it: "il porco, i porci",
+        fr: "le porc, les porcs"
+      },
+      {
+        it: "il sindaco, i sindaci",
+        fr: "le maire, les maires"
+      },
+      {
+        it: "il medico, i medici",
+        fr: "le médecin, les médecins"
+      },
+      {
+        it: "il cardiologo, i cardiologi",
+        fr: "le cardiologue, les cardiologues"
+      },
+      {
+        it: "lo psicologo, gli psicologi",
+        fr: "le psychologue, les psychologues"
+      },
+      {
+        it: "l'archipelago, gli archipelaghi",
+        fr: "l'archipel, les archipels"
+      },
+      {
+        it: "il carico, i carichi",
+        fr: "le chargement, les chargements"
+      },
+      {
+        it: "il catalogo, i cataloghi",
+        fr: "le catalogue, les catalogues"
+      },
+      {
+        it: "il dialogo, i dialoghi",
+        fr: "le dialogue, les dialogues"
+      },
+      {
+        it: "l'epilogo, gli epiloghi",
+        fr: "l'épilogue, les épilogues"
+      },
+      {
+        it: "il monologo, i monologhi",
+        fr: "le monologue, les monologues"
+      },
+      {
+        it: "l'obbligo, gli obblighi",
+        fr: "l'obligation, les obligations"
+      },
+      {
+        it: "il profugo, i profughi",
+        fr: "le réfugié, les réfugiés"
+      },
+      {
+        it: "il prologo, i prologhi",
+        fr: "le prologue, les prologues"
+      },
+      {
+        it: "il rammarico, i rammarichi",
+        fr: "le regret, les regrets"
+      },
+      {
+        it: "il mormorio, i mormorii",
+        fr: "le murmure, les murmures"
+      },
+      {
+        it: "lo zio, gli zii",
+        fr: "l'oncle, les oncles"
+      },
+      {
+        it: "il dio, gli dèi",
+        fr: "le dieu, les dieux"
+      },
+      {
+        it: "il bacio, i baci",
+        fr: "le baiser, les baisers"
+      },
+      {
+        it: "il figlio, i figli",
+        fr: "le fils, les fils"
+      },
+      {
+        it: "il formaggio, i formaggi",
+        fr: "le fromage, les fromages"
+      },
+      {
+        it: "l'occhio, gli occhi",
+        fr: "l'oeil, les yeux"
+      },
+      {
+        it: "l'olio, gli oli",
+        fr: "l'huile, les huiles"
+      },
+      {
+        it: "il premio, i premi",
+        fr: "le prix, les prix"
+      },
+      {
+        it: "il tempio, i templi",
+        fr: "le temple, les temples"
+      },
+      {
+        it: "il centinaio, le centinaia",
+        fr: "la centaine, les centaines"
+      },
+      {
+        it: "il migliaio, le migliaia",
+        fr: "le millier, les milliers"
+      },
+      {
+        it: "il miglio, le miglia",
+        fr: "le mille, les milles"
+      },
+      {
+        it: "il paio, le paia",
+        fr: "la paire, les paires"
+      },
+      {
+        it: "il riso, le risa",
+        fr: "le rire, les rires"
+      },
+      {
+        it: "l'uovo, le uova",
+        fr: "l'oeuf, les oeufs"
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
+  {
+    location: "24",
+    section: "",
+    content: [
+      {
+        it: "",
+        fr: ""
+      },
+    ]
+  },
 ];
 
 class App extends React.Component {
