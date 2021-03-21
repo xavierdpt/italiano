@@ -593,7 +593,7 @@ const examples = [
       },
       {
         it: "l'attrice",
-        fr: "l'actice"
+        fr: "l'actrice"
       },
       {
         it: "lo scrittore",
@@ -605,11 +605,11 @@ const examples = [
       },
       {
         it: "il dottore",
-        fr: "le médecin"
+        fr: "le docteur"
       },
       {
         it: "la dottoressa",
-        fr: "la médecin"
+        fr: "la femme docteur"
       },
     ]
   },
@@ -1406,127 +1406,52 @@ const examples = [
       },
     ]
   },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
-  {
-    location: "24",
-    section: "",
-    content: [
-      {
-        it: "",
-        fr: ""
-      },
-    ]
-  },
 ];
+
+const randomize = function (questions) {
+  for (let i = 0; i < questions.length; ++i) {
+    const other =  i + Math.floor(Math.random() * (questions.length - i));
+    const value = questions[i];
+    questions[i] = questions[other];
+    questions[other] = value;
+  }
+}
+
+const initQuestions = function (sections) {
+  let questions = [];
+  for (let section = 0; section < examples.length; ++section) {
+    if (sections[section]) {
+      for (let example = 0; example < examples[section].content.length; ++example) {
+        questions.push({ section, example });
+      }
+    }
+  }
+  randomize(questions);
+  return questions;
+}
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     const sections = examples.map(s => false);
     sections[sections.length - 1] = true;
+    const questions = initQuestions(sections);
+    const qnum = 0;
+    const score = -examples[questions[qnum].section].content[questions[qnum].example].it.length;
     this.state = {
-      previous: [],
-      example: 0,
-      section: sections.indexOf(true),
+      qnum,
       value: '',
       bad: null,
       congrats: false,
-      score: -(examples[sections.indexOf(true)].content[0].it).length,
-      sections
+      score,
+      sections,
+      questions
     };
   }
   handleTextChange = (e) => {
     const newvalue = e.target.value;
-    const { example, score, section } = this.state;
+    const { qnum, questions, score } = this.state;
+    const { section, example } = questions[qnum];
     if (examples[section].content[example].it.startsWith(newvalue)) {
       const newstate = { value: newvalue, bad: false, score: score + 1 }
       this.setState();
@@ -1544,48 +1469,34 @@ class App extends React.Component {
     }
   }
   next = () => {
-    const { example, section, previous, sections } = this.state;
-    const next_example = (example + 1) % examples[section].content.length;
-    let next_section = section;
-    if (next_example === 0) {
-      do {
-        next_section = (next_section + 1) % examples.length;
-      } while (!sections[next_section])
-    }
+    const { qnum, questions } = this.state;
+    const next_qnum = (qnum + 1) % questions.length;
+    const { section: next_section, example: next_example } = questions[qnum];
     this.setState({
-      example: next_example,
-      section: next_section,
+      qnum: next_qnum,
       value: '',
       bad: null,
       congrats: false,
-      score: -examples[next_section].content[next_example].it.length,
-      previous: previous.concat([examples[section].content[example].it])
+      score: -examples[next_section].content[next_example].it.length
     });
   }
   toggleSection = (e) => {
-    const { sections, section } = this.state;
+    const { sections } = this.state;
     const newSections = JSON.parse(JSON.stringify(sections));
     newSections[e.target.getAttribute('data-index')] = e.target.checked;
-    const next_state = { sections: newSections };
-    if (!newSections[section]) {
-      let found = false;
-      for (let i = section + 1; i < examples.length; ++i) {
-        if (newSections[i]) {
-          next_state.section = i;
-          found = true;
-          break;
-        }
-      }
-      if (!found) {
-        for (let i = 0; i < section; ++i) {
-          if (newSections[i]) {
-            next_state.section = i;
-            break;
-          }
-        }
-      }
-    }
-    this.setState(next_state);
+    const qnum = 0;
+    const questions = initQuestions(newSections);
+    const { section, example } = questions[qnum];
+    const score = -examples[section].content[example].it.length;
+    this.setState({
+      qnum,
+      questions,
+      value: '',
+      bad: null,
+      congrats: false,
+      score,
+      sections: newSections
+    });
   }
   sections = () => {
     const { sections } = this.state;
@@ -1626,7 +1537,8 @@ class App extends React.Component {
     return <table style={{ width: '100%' }}><thead><tr></tr><tr></tr></thead><tbody>{content}</tbody></table>;
   }
   render() {
-    const { previous, section, value, example, bad, congrats, score } = this.state;
+    const { value, qnum, questions, bad, congrats, score } = this.state;
+    const { section, example } = questions[qnum];
     const textStyle = {
       width: '100%'
     }
